@@ -1,6 +1,6 @@
 import {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import logo from './assets/logo.svg'
+import profil from './assets/profil.svg'
 import './App.css'
 
 import Test from 'components/Test';
@@ -11,12 +11,8 @@ function App() {
     return (
         <>
             <header role="banner">
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} alt="Vite logo"/>
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} alt="React logo"/>
-                </a>
+                <img src={logo} alt="Talk to"/>
+                <a href="/"><img src={profil} alt=""/></a>
             </header>
             <main role="main">
                 <h1>Vite + React</h1>
@@ -30,7 +26,10 @@ function App() {
                     </p>
                 </div>
             </main>
-            <footer role="contentinfo"></footer>
+            <footer role="contentinfo">
+                <p>© All Rights Reserved.</p>
+                <a href="/">About us</a>
+            </footer>
         </>
     )
 }
