@@ -1,0 +1,7 @@
+@use "../01-settings/colors";
+
+@each $opacity-key, $opacity-value in colors.$opacities {
+	.opacite-#{$opacity-key} {
+		opacity: $opacity-value !important;
+	}
+}

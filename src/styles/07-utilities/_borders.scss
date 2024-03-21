@@ -1,0 +1,88 @@
+@use "../01-settings/fonts";
+@use "../01-settings/borders";
+@use "../01-settings/colors";
+
+.border-0 {
+  border: none !important;
+}
+
+.bordure {
+  border: borders.$border-size-default borders.$border-type-default colors.$color-black !important;
+}
+
+.border-top {
+  border-top: borders.$border-size-default borders.$border-type-default colors.$color-black !important;
+}
+
+.border-bottom {
+  border-bottom: borders.$border-size-default borders.$border-type-default colors.$color-black !important;
+}
+
+.border-right {
+  border-right: borders.$border-size-default borders.$border-type-default colors.$color-black !important;
+}
+
+.border-left {
+  border-left: borders.$border-size-default borders.$border-type-default colors.$color-black !important;
+}
+
+/* Border radius */
+@each $radius-key, $radius-value in fonts.$border-rayon {
+  .#{$radius-key} {
+    border-radius: $radius-value !important;
+  }
+}
+
+@each $radius-key, $radius-value in fonts.$border-rayon {
+  .rounded-top-#{$radius-key} {
+    border-top-left-radius: $radius-value !important;
+    border-top-right-radius: $radius-value !important;
+  }
+}
+
+@each $radius-key, $radius-value in fonts.$border-rayon {
+  .rounded-bottom-#{$radius-key} {
+    border-bottom-left-radius: $radius-value !important;
+    border-bottom-right-radius: $radius-value !important;
+  }
+}
+
+@each $radius-key, $radius-value in fonts.$border-rayon {
+  .rounded-left-#{$radius-key} {
+    border-top-left-radius: $radius-value !important;
+    border-bottom-left-radius: $radius-value !important;
+  }
+}
+
+@each $radius-key, $radius-value in fonts.$border-rayon {
+  .rounded-right-#{$radius-key} {
+    border-top-right-radius: $radius-value !important;
+    border-bottom-right-radius: $radius-value !important;
+  }
+}
+
+/* Border style */
+.border-type-dashed {
+  border-style: borders.$border-type-dashed !important;
+}
+
+/* Border size */
+@each $border-key, $border-value in borders.$border-size {
+  .border-size-#{$border-key} {
+    border-width: $border-value !important;
+  }
+}
+
+/* Border color */
+@each $color-key, $color-value in colors.$colors {
+  .border-color-#{$color-key} {
+    border-color: $color-value !important;
+  }
+}
+
+/* Border projet */
+@each $border-key, $border-value in borders.$border-projet {
+  .border-projet-#{$border-key} {
+    border: $border-value !important;
+  }
+}

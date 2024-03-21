@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "../01-settings/grille";
+@use "../02-mixins/breakpoints";
+
+// stylelint-disable declaration-no-important
+
+//
+// Utilities for common `display` values
+//
+
+@each $breakpoint in map.keys(grille.$grid-breakpoints) {
+	@include breakpoints.media-breakpoint-up($breakpoint) {
+		$infix: breakpoints.breakpoint-infix($breakpoint, grille.$grid-breakpoints);
+
+		@each $value in grille.$displays {
+			.d#{$infix}-#{$value} {
+				display: $value !important;
+			}
+		}
+	}
+}
+
+// Always hide an element with the `hidden` HTML attribute (from PureCSS).
+// Needed for proper display in IE 10-.
+// @note Coming from 03-generic/_reboots.scss to prevent `.d-*` from overriding it
+[hidden] {
+	display: none !important;
+}

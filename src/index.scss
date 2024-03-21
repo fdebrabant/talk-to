@@ -1,10 +1,6 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  height: 100%;
-
-  color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(#0E141B 80%, #182735);
-}
+@use "../src/styles/02-mixins/index" as mixins;
+@use "../src/styles/03-generic/index" as generic;
+@use "../src/styles/04-elements/index" as elements;
+@use "../src/styles/05-objects/index" as objects;
+@use "../src/styles/06-components/index" as components;
+@use "../src/styles/07-utilities/index" as utilities;

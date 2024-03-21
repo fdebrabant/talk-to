@@ -1,0 +1,18 @@
+@use "../01-settings/colors";
+
+// stylelint-disable declaration-no-important
+
+//
+// Utilities for common `colors` values
+//
+
+
+@each $color-key, $color-value in colors.$colors {
+	.color-#{$color-key} {
+		color: $color-value !important;
+	}
+}
+
+.color-inherit {
+	color: inherit !important;
+}

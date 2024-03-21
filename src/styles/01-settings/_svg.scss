@@ -1,0 +1,6 @@
+@use "colors";
+
+// @note Sources du SVG, plus lisible :
+// @see ../../images/loader.svg
+$loader: url("data:image/svg+xml,<svg viewBox='0 0 64 24' xmlns='http://www.w3.org/2000/svg' fill='#{colors.$color-primary}'><circle cx='7' cy='12' r='7'><animate id='a' begin='0;b.end+0.2s' attributeName='cy' dur='0.5s' values='12;7;17;12'/></circle><circle cx='32' cy='12' r='7'><animate begin='a.begin+0.2s' attributeName='cy' dur='0.5s' values='12;7;17;12'/></circle><circle cx='57' cy='12' r='7'><animate id='b' begin='a.begin+0.4s' attributeName='cy' dur='0.5s' values='12;7;17;12'/></circle></svg>");
+

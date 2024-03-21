@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import logo from './assets/logo.svg'
-import profil from './assets/profil.svg'
-import './App.css'
+import profil from './assets/icons/profil.svg'
+import './App.scss'
 
 import Test from 'components/Test';
 

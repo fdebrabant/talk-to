@@ -1,0 +1,15 @@
+@use "../01-settings/fonts";
+@use "../01-settings/bootstrap";
+
+// stylelint-disable declaration-no-important
+
+// Common values
+@each $position in bootstrap.$positions {
+	.position-#{$position} { position: $position !important; }
+}
+
+@each $inset in fonts.$insets {
+	@each $side in top, right, bottom, left {
+		.#{$side}-#{$inset} { #{$side}: $inset * 1% !important; }
+	}
+}

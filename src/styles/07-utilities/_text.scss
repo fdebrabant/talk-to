@@ -1,0 +1,72 @@
+@use "../01-settings/fonts";
+
+//
+// Texte
+//
+// Bootstrap v4
+//// @link https://github.com/twbs/bootstrap/blob/v4-dev/scss/utilities/_text.scss
+//
+
+// Transformation
+.text-uppercase {
+	text-transform: uppercase !important;
+}
+
+// Alignement
+.text-center {
+	text-align: center !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.text-nowrap {
+	white-space: nowrap !important;
+}
+
+.text-decoration-none {
+	text-decoration: none !important;
+}
+
+.text-underline {
+	text-decoration: underline !important;
+}
+
+// Césure
+.text-break {
+	word-break: break-word !important; // Deprecated, but avoids issues with flex containers
+	word-wrap: break-word !important; // Used instead of `overflow-wrap` for IE & Edge Legacy
+}
+
+// Corps
+@each $fs-key, $fs-value in fonts.$size-font {
+	.size-font-#{$fs-key} {
+		font-size: $fs-value !important;
+	}
+}
+
+// Graisses
+@each $fw-key, $fw-value in fonts.$font-weight {
+	.font-weight-#{$fw-key} {
+		font-weight: $fw-value !important;
+	}
+}
+
+// Clamp
+// @note Tosca uniquement
+[class*="text-clamp-"] {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.text-clamp-3 {
+	-webkit-line-clamp: 3;
+}
+
+.text-clamp-2 {
+	-webkit-line-clamp: 2;
+}

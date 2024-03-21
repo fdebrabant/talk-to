@@ -1,0 +1,29 @@
+// Points de rupture grille
+//
+// Défini les dimensions minimums pour lesquelles la disposition va changer
+// s'adaptant aux tailles d'écrans, pour être utilisées dans les media-queries
+
+$enable-grid-classes: true !default;
+
+$displays: none, inline, inline-block, block, flex, inline-flex, table, table-cell, contents !default;
+
+$overflows: auto, hidden, visible, scroll !default;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 480px,
+	md: 960px,
+	lg: 1280px,
+	xl: 1440px
+) !default;
+
+// Contenant des grilles
+// Définit la largeur maximum de `.container` pour différentes tailles d'écran
+
+$container-max-widths: (
+	lg: 1152px,
+) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 1rem !default;
+$grid-row-columns: 6 !default;

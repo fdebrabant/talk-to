@@ -1,0 +1,74 @@
+@use "sass:map";
+
+$font-chemin-roboto: "src/assets/fonts/roboto";
+$font-chemin-sigmarOne: "src/assets/fonts/sigmarOne";
+
+@font-face {
+  src: url("#{$font-chemin-roboto}/Roboto-Regular.woff2") format("woff2");
+  font-family: "Roboto";
+}
+
+@font-face {
+  src: url("#{$font-chemin-sigmarOne}/SigmarOne-Regular.woff2") format("woff2");
+  font-family: "SigmarOne";
+}
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-size-xsmall: .75rem; // 12px
+$font-size-small: .875rem; // 14px
+$font-size-medium: 1rem; // 16px
+$font-size-large: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-xxl: 2.25rem; // 36px
+$font-size-xxxl: 2.5rem; // 40px
+
+$font-line-medium: 1.25rem; // 20px
+
+$rayon-small: .0625rem; // 1px
+$rayon-default: .25rem; // 4px
+$rayon-net: 0; // 0px
+$rayon-rounded: 3.125rem; // 50px
+
+$size-bordure-champ: .0625rem; // 1px
+
+$size-small: .25rem; // 4px
+$size-inferieur: .5rem; // 8px
+$size-defaut: 1rem; // 16px
+$size-medium: 1.5rem; // 24px
+$size-large: 3rem; // 48px
+
+$size-font: () !default;
+$size-font: map.merge(
+                (
+                        "xsmall": $font-size-xsmall,
+                        "small": $font-size-small,
+                        "medium": $font-size-medium,
+                ),
+                $size-font
+);
+
+$font-weight: () !default;
+$font-weight: map.merge(
+                (
+                        "normal": $font-weight-normal,
+                        "medium": $font-weight-medium,
+                        "bold": $font-weight-bold,
+                ),
+                $font-weight
+);
+
+$border-rayon: () !default;
+$border-rayon: map.merge(
+                (
+                        "rounded-0": $rayon-net,
+                        "rounded-1": $rayon-small,
+                        "rounded": $rayon-default,
+                        "rounded-circle": $rayon-rounded,
+                ),
+                $border-rayon
+);
+
+$insets: 0, 50, 100 !default;

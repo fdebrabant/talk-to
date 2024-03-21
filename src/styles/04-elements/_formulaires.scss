@@ -1,0 +1,78 @@
+@use "../01-settings/colors";
+@use "../01-settings/borders";
+@use "../01-settings/shadows";
+@use "../01-settings/spaces";
+@use "../01-settings/form";
+@use "../01-settings/bootstrap";
+@use "../02-mixins/escape-svg";
+
+//
+// Formulaires
+//
+// Inspiré de Bootstrap v4
+//// @link https://github.com/twbs/bootstrap/blob/v4-dev/scss/_forms.scss
+//
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: inline-block;
+	width: form.$checkbox-size;
+	min-width: form.$checkbox-size;
+	height: form.$checkbox-size;
+	vertical-align: text-bottom;
+	background-color: colors.$color-white;
+	background-position: 50%;
+	background-size: form.$checkbox-size;
+	border: form.$checkbox-border;
+	transform: translateY(#{borders.$border-size-default * 2});
+	appearance: none;
+
+	+ label {
+		margin-bottom: 0;
+		opacity: 1;
+		vertical-align: middle;
+	}
+
+	&:checked {
+		background-color: colors.$color-black;
+		border-color: colors.$color-black;
+	}
+
+	&:disabled {
+		opacity: colors.$opacity-medium;
+
+		+ label {
+			opacity: colors.$opacity-medium;
+		}
+
+		&:checked {
+			background-color: colors.$color-black;
+		}
+	}
+
+	&:focus {
+		box-shadow: shadows.$shadow-focus;
+	}
+
+	+ label {
+		padding: 0 spaces.$space-m 0 spaces.$space-s;
+	}
+}
+
+input[type="radio"] {
+	background-clip: content-box;
+	border-radius: form.$radio-btn-border-radius;
+	padding: form.$radio-btn-padding;
+}
+
+input[type="checkbox"] {
+	&:indeterminate {
+		background-color: colors.$color-black;
+		border-color: colors.$color-black;
+		background-image: escape-svg.escape-svg(bootstrap.$custom-checkbox-indicator-icon-indeterminate);
+	}
+
+	&:checked {
+		background-image: escape-svg.escape-svg(bootstrap.$custom-checkbox-indicator-icon-checked);
+	}
+}

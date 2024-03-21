@@ -1,0 +1,27 @@
+@use "../01-settings/fonts";
+@use "../01-settings/colors";
+@use "../01-settings/borders";
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: SigmarOne, sans-serif;
+  letter-spacing: normal;
+  line-height: normal;
+  color: colors.$color-white;
+}
+
+h1 {
+  font-size: fonts.$font-size-xxxl;
+}
+
+h2 {
+  font-size: fonts.$font-size-xxl;
+}
+
+h3 {
+  font-size: fonts.$font-size-xl;
+}
+
+h4 {
+  font-size: fonts.$font-size-large;
+}

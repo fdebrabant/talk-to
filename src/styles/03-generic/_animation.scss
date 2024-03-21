@@ -1,0 +1,18 @@
+@use "../01-settings/spaces";
+
+// Rotation
+@keyframes rotation_complete {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+// Entrée / sortie
+@keyframes slide-in-out {
+	from {
+		right: -500px;
+	}
+	to {
+		right: spaces.$space-l;
+	}
+}

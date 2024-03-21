@@ -1,0 +1,19 @@
+@use "../01-settings/fonts";
+@use "../01-settings/colors";
+@use "../01-settings/spaces";
+@use "../01-settings/shadows";
+
+a {
+  border-radius: fonts.$rayon-default;
+  color: colors.$color-primary;
+  display: inline-block;
+  padding: spaces.$space-3xs;
+
+  &:hover {
+    background-color: colors.$color-white;
+  }
+
+  &:focus {
+    box-shadow: shadows.$shadow-focus;
+  }
+}

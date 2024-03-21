@@ -1,0 +1,10 @@
+@use "colors";
+@use "spaces";
+
+/* Ombre */
+$shadow-notification: 0 0 .625rem rgba(colors.$color-black, .1), 0 spaces.$space-4xs spaces.$space-2xs rgba(colors.$color-black, .4);
+$shadow-small: 0 spaces.$space-3xs .375rem 0 rgba(colors.$color-black, .1);
+$shadow-medium: 0 spaces.$space-3xs .375rem 0 rgba(colors.$color-black, .2);
+$shadow-focus: 0 0 0 spaces.$space-3xs colors.$color-focus;
+$shadow-focus-input: 0 0 0 spaces.$space-4xs colors.$color-focus;
+$shadow-focus-erreur: 0 0 0 spaces.$space-4xs colors.$color-danger;

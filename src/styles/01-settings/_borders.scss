@@ -1,0 +1,43 @@
+@use "sass:map";
+@use "colors";
+
+/* Parametres */
+$border-size-default: .0625rem; // 1px
+$border-size-medium: .125rem; // 2px
+$border-size-big: .1875rem; // 3px
+
+$border-type-default: solid;
+$border-type-dashed: dashed;
+
+/* Bordures globales */
+$border-projet-primary: $border-size-default $border-type-default colors.$color-primary;
+$border-projet-success: $border-size-medium $border-type-default colors.$color-succes;
+$border-projet-error: $border-size-medium $border-type-default colors.$color-danger;
+$border-projet-advertissement: $border-size-medium $border-type-default colors.$color-avertissement;
+
+/* Bordures spécifiques */
+$border-focus-visible: $border-size-medium $border-type-default colors.$color-white;
+$border-divider: $border-size-default $border-type-default colors.$color-gray;
+
+
+$border-projet: () !default;
+$border-projet: map.merge(
+		(
+			"primary": $border-projet-primary,
+			"success": $border-projet-success,
+			"error": $border-projet-error,
+			"advertissement": $border-projet-advertissement,
+			"divider": $border-divider,
+		),
+		$border-projet
+);
+
+$border-size: () !default;
+$border-size: map.merge(
+		(
+			"default": $border-size-default,
+			"medium": $border-size-medium,
+			"big": $border-size-big,
+		),
+		$border-size
+);

@@ -1,0 +1,120 @@
+@use "../01-settings/fonts";
+@use "../01-settings/borders";
+@use "../01-settings/colors";
+@use "../01-settings/spaces";
+@use "../01-settings/shadows";
+
+.sre-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: (spaces.$space-xs + spaces.$space-4xs) spaces.$space-m;
+  font-size: fonts.$font-size-small;
+  font-weight: fonts.$font-weight-medium;
+  font-family: Roboto, sans-serif;
+  line-height: fonts.$font-line-medium;
+  border: borders.$border-projet-primary;
+  border-radius: fonts.$rayon-default;
+  background-color: transparent;
+  color: colors.$color-black;
+  text-decoration: none;
+  user-select: none;
+
+  &:focus {
+    box-shadow: shadows.$shadow-focus;
+    outline-color: transparent;
+  }
+
+  &:hover {
+    background-color: colors.$color-white;
+  }
+
+  &:disabled {
+    background-color: colors.$color-gray;
+    border-color: colors.$color-gray;
+    color: rgba(colors.$color-black, colors.$opacity-medium);
+    pointer-events: none;
+  }
+}
+
+.sre-btn--primary {
+  background-color: colors.$color-primary;
+  color: colors.$color-white;
+
+  &:hover {
+    background-color: colors.$color-white;
+  }
+
+  &:active {
+    background-color: colors.$color-white;
+  }
+}
+
+.sre-btn--secondaire {
+  background-color: colors.$color-white;
+  color: colors.$color-primary;
+
+  &:active {
+    background-color: colors.$color-white;
+  }
+}
+
+.sre-btn--danger {
+  background-color: colors.$color-danger;
+  color: colors.$color-white;
+  border-color: colors.$color-danger;
+
+  &:hover {
+  }
+
+  &:active {
+  }
+}
+
+.sre-btn--lien {
+  color: colors.$color-primary;
+  border-color: transparent;
+
+  &:active {
+  }
+}
+
+.sre-btn--icon {
+  border-color: transparent;
+  color: colors.$color-primary;
+  font-size: fonts.$font-size-large;
+  position: absolute;
+  right: spaces.$space-m;
+}
+
+.sre-btn--icon-only {
+  font-size: fonts.$font-size-xl;
+  padding: spaces.$space-xs - spaces.$space-4xs;
+  vertical-align: middle;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: fonts.$rayon-default;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:active {
+    color: colors.$color-black;
+  }
+}
+
+// @todo On doit pouvoir gérer ça avec line-height + transform, de manière globale, sans les classes.
+.sre-btn__icon-left {
+  margin: -#{spaces.$space-2xs + spaces.$space-3xs} spaces.$space-xs -#{spaces.$space-2xs + spaces.$space-3xs} -#{spaces.$space-2xs + spaces.$space-3xs};
+  font-size: fonts.$font-size-xl;
+}
+
+.sre-btn__icon-right {
+  margin: -#{spaces.$space-2xs + spaces.$space-3xs} -#{spaces.$space-2xs + spaces.$space-3xs} -#{spaces.$space-2xs + spaces.$space-3xs} spaces.$space-xs;
+  font-size: fonts.$font-size-xl;
+}

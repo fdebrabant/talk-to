@@ -1,0 +1,40 @@
+@use "sass:map";
+
+$space-4xs: .0625rem; // 1px
+$space-3xs: .125rem; // 2px
+$space-2xs: .25rem; // 4px
+$space-xs: .5rem; // 8px
+$space-s: .75rem; // 12px
+$space-m: 1rem; // 16px
+$space-l: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-xxl: 2.5rem; // 40px
+$space-2l: 3rem; // 48px
+$space-2xl: 4rem; // 64px
+$space-3xl: 6rem; // 96px
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spaces map, should you need more variation.
+
+$spaces: () !default;
+$spaces: map.merge(
+		(
+			0: 0,
+			xxxs: $space-3xs,
+			xxs: $space-2xs,
+			xs: $space-xs,
+			s: $space-s,
+			m: $space-m,
+			l: $space-l,
+			2l: $space-2l,
+			xl: $space-xl,
+			xxl: $space-xxl,
+			2xl: $space-2xl,
+			3xl: $space-3xl
+		),
+		$spaces
+);

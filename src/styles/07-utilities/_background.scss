@@ -1,0 +1,18 @@
+@use "../01-settings/colors";
+
+// stylelint-disable declaration-no-important
+
+//
+// Utilities for common `background colors` values
+//
+
+
+@each $bg-key, $bg-value in colors.$bg-colors {
+	.bg-#{$bg-key} {
+		background-color: $bg-value !important;
+	}
+}
+
+.bg-transparent {
+	background-color: transparent !important;
+}

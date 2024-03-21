@@ -1,0 +1,13 @@
+@use "../01-settings/shadows";
+
+.shadow-none {
+	box-shadow: none;
+}
+
+.shadow-small {
+	box-shadow: shadows.$shadow-small!important;
+}
+
+.shadow-regular {
+	box-shadow: shadows.$shadow-medium!important;
+}

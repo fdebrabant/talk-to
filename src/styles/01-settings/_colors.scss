@@ -1,0 +1,74 @@
+@use "sass:map";
+
+$color-primary: #3A4ADA;
+$color-white: #fff;
+$color-black: #000;
+
+// Green
+$color-succes-dark: #00663b;
+$color-succes: #00804b;
+$color-succes-light: #ecf9f4;
+
+// Red
+$color-danger-dark: #991f00;
+$color-danger: #ce0500;
+$color-danger-light: #feeae7;
+
+// Orange
+$color-avertissement-dark: #884b11;
+$color-avertissement: #ff941c;
+$color-avertissement-light: #fff4e6;
+
+// Gray
+$color-gray: #B7B7B7;
+
+$color-focus: #0063cb;
+
+// Opacity
+
+$opacity-medium: .6;
+$opacity-small: .38;
+
+
+$opacities: () !default;
+$opacities: map.merge(
+                (
+                        "medium": $opacity-medium,
+                        "small": $opacity-small
+                ),
+                $opacities
+);
+
+$colors: () !default;
+$colors: map.merge(
+                (
+                        "primary": $color-primary,
+                        "white": $color-white,
+                        "black": $color-black,
+                        "succes-dark": $color-succes-dark,
+                        "succes-fonce": $color-succes,
+                        "succes-light": $color-succes-light,
+                        "danger-dark": $color-danger-dark,
+                        "danger-fonce": $color-danger,
+                        "danger-light": $color-danger-light,
+                        "avertissement-dark": $color-avertissement-dark,
+                        "avertissement": $color-avertissement,
+                        "avertissement-light": $color-avertissement-light,
+                        "gray": $color-gray,
+                        "focus":$color-focus
+                ),
+                $colors
+);
+
+$bg-colors: () !default;
+$bg-colors: map.merge(
+                (
+                        "primary": $color-primary,
+                        "white": $color-white,
+                        "succes-light": $color-succes-light,
+                        "danger-light": $color-danger-light,
+                        "avertissement-light": $color-avertissement-light,
+                        "gray": $color-gray
+                ),
+                $bg-colors
+);
