@@ -1,36 +1,24 @@
-import {useState} from 'react'
-import logo from './assets/logo.svg'
-import profil from './assets/icons/profil.svg'
+
 import './App.scss'
 
-import Test from 'components/Test';
+// components
+import Header from "./components/layout/Header.tsx";
+import Footer from "./components/layout/Footer.tsx";
+import Conversation from "./pages/Conversation/Conversation.tsx";
+// import Home from "./components/pages/Home.tsx";
 
 function App() {
-    const [count, setCount] = useState(0)
+
 
     return (
-        <>
-            <header role="banner">
-                <img src={logo} alt="Talk to"/>
-                <a href="/"><img src={profil} alt=""/></a>
-            </header>
+        <div className="app-content container">
+            <Header/>
             <main role="main">
-                <h1>Vite + React</h1>
-                <Test text="OK"/>
-                <div>
-                    <button onClick={() => setCount((count) => count + 1)}>
-                        count is {count}
-                    </button>
-                    <p>
-                        Edit <code>src/App.tsx</code> and save to test HMR
-                    </p>
-                </div>
+               {/*<Home/>*/}
+                <Conversation/>
             </main>
-            <footer role="contentinfo">
-                <p>© All Rights Reserved.</p>
-                <a href="/">About us</a>
-            </footer>
-        </>
+            <Footer/>
+        </div>
     )
 }
 
