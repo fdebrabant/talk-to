@@ -18,6 +18,7 @@ describe("GameService", () => {
     expect(firstMessage).toEqual({
       questions: ["What's your favorite color?"],
       answers: ["Purple", "Yellow", "Pink"],
+      selectedAnswer: null,
     });
   });
 
@@ -34,6 +35,25 @@ describe("GameService", () => {
     expect(message).toEqual({
       questions: ["Cool! Whats your favorite purple object?"],
       answers: ["Car", "lavander", "Eggplant"],
+      selectedAnswer: null,
     });
+  });
+
+  test("should add message to conversation when answer is selected", () => {
+    const gameService = new GameService(data);
+    gameService.firstMessage();
+    gameService.getMessage("Purple");
+    expect(gameService.conversation).toEqual([
+      {
+        questions: ["What's your favorite color?"],
+        answers: ["Purple", "Yellow", "Pink"],
+        selectedAnswer: "Purple",
+      },
+      {
+        questions: ["Cool! Whats your favorite purple object?"],
+        answers: ["Car", "lavander", "Eggplant"],
+        selectedAnswer: null,
+      },
+    ]);
   });
 });

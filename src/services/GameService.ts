@@ -6,10 +6,11 @@ type Answer = string;
 interface Message {
   questions: Question[];
   answers: Answer[];
+  selectedAnswer: Answer | null;
 }
 
 export class GameService {
-  public conversation: string[] = [];
+  public conversation: Message[] = [];
 
   constructor(private data: Data) {}
 
@@ -26,8 +27,21 @@ export class GameService {
 
     const answers = this.generateAnswers(dataItem.source);
     const questions = this.generateQuestions(dataItem.source);
+    const selectedAnswer = null;
 
-    return { questions, answers };
+    const message = { questions, answers, selectedAnswer };
+
+    this.updateConversation(answer, message);
+
+    return message;
+  }
+
+  private updateConversation(answer: Answer, message: Message) {
+    if (this.conversation.length > 0) {
+      this.conversation[this.conversation.length - 1].selectedAnswer = answer;
+    }
+
+    this.conversation.push(message);
   }
 
   private generateAnswers(dataItemSource: DataItem["source"]): Answer[] {
