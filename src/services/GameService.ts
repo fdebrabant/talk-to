@@ -14,27 +14,18 @@ export class GameService {
   constructor(private data: Data) {}
 
   firstMessage(): Message {
-    const startItem = this.data.find((dataItem) => dataItem.name === "Start");
-
-    if (!startItem || !startItem.source) {
-      throw new Error("Start Item doesn't exist");
-    }
-
-    const answers = this.generateAnswers(startItem.source);
-    const questions = this.generateQuestions(startItem.source);
-
-    return { questions, answers };
+    return this.getMessage("Start");
   }
 
-  nextMessage(answer: string): Message {
-    const nextItem = this.data.find((dataItem) => dataItem.name === answer);
+  getMessage(answer: Answer): Message {
+    const dataItem = this.data.find((dataItem) => dataItem.name === answer);
 
-    if (!nextItem || !nextItem.source) {
-      throw new Error("Next Item doesn't exist");
+    if (!dataItem || !dataItem.source) {
+      throw new Error("Data Item doesn't exist");
     }
 
-    const answers = this.generateAnswers(nextItem.source);
-    const questions = this.generateQuestions(nextItem.source);
+    const answers = this.generateAnswers(dataItem.source);
+    const questions = this.generateQuestions(dataItem.source);
 
     return { questions, answers };
   }
