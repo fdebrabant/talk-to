@@ -18,12 +18,8 @@ export class GameService {
     firstMessage(): Message {
         const startItem = this.data.find(dataItem => dataItem.name === "Start");
 
-        // if (!this.data || this.data.length === 0){
-        //     throw new Error('Data is empty')
-        // }
-
         if (!startItem || !startItem.source) {
-            throw new Error('start Item doesnt exist');
+            throw new Error('Start Item doesnt exist');
         }
 
         const answers = this.generateAnswers(startItem.source);

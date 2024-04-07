@@ -23,7 +23,6 @@ describe('GameService', () => {
 
     test('should return error when first message doesnt exist', () => {
         const gameService = new GameService([]);
-        const firstMessage = gameService.firstMessage();
-        expect(firstMessage).toThrow('start Item doesnt exist');
+        expect(() => gameService.firstMessage()).toThrow('Start Item doesnt exist')
     })
 });
