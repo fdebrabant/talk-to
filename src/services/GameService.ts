@@ -17,11 +17,24 @@ export class GameService {
     const startItem = this.data.find((dataItem) => dataItem.name === "Start");
 
     if (!startItem || !startItem.source) {
-      throw new Error("Start Item doesnt exist");
+      throw new Error("Start Item doesn't exist");
     }
 
     const answers = this.generateAnswers(startItem.source);
     const questions = this.generateQuestions(startItem.source);
+
+    return { questions, answers };
+  }
+
+  nextMessage(answer: string): Message {
+    const nextItem = this.data.find((dataItem) => dataItem.name === answer);
+
+    if (!nextItem || !nextItem.source) {
+      throw new Error("Next Item doesn't exist");
+    }
+
+    const answers = this.generateAnswers(nextItem.source);
+    const questions = this.generateQuestions(nextItem.source);
 
     return { questions, answers };
   }

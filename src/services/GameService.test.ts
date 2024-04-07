@@ -21,8 +21,19 @@ describe("GameService", () => {
     });
   });
 
-  test("should return error when first message doesnt exist", () => {
+  test("should return error when first message doesn't exist", () => {
     const gameService = new GameService([]);
-    expect(() => gameService.firstMessage()).toThrow("Start Item doesnt exist");
+    expect(() => gameService.firstMessage()).toThrow(
+      "Start Item doesn't exist"
+    );
+  });
+
+  test("One given answer should return message", () => {
+    const gameService = new GameService(data);
+    const nextMessage = gameService.nextMessage("Purple");
+    expect(nextMessage).toEqual({
+      questions: ["Cool! Whats your favorite purple object?"],
+      answers: ["Car", "lavander", "Eggplant"],
+    });
   });
 });
