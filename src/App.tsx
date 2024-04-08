@@ -1,25 +1,32 @@
-
-import './App.scss'
+import "./App.scss";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // components
-import Header from "./components/layout/Header.tsx";
-import Footer from "./components/layout/Footer.tsx";
+import Home from "pages/Home.tsx";
+import Error from "pages/Error.tsx";
 import Conversation from "./pages/Conversation/Conversation.tsx";
-// import Home from "./components/pages/Home.tsx";
+import Root from "layout/Root.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/conversation",
+        element: <Conversation />,
+      },
+    ],
+  },
+]);
 
 function App() {
-
-
-    return (
-        <div className="app-content container">
-            <Header/>
-            <main role="main">
-               {/*<Home/>*/}
-                <Conversation/>
-            </main>
-            <Footer/>
-        </div>
-    )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
