@@ -12,9 +12,10 @@ describe("GameService", () => {
     expect(gameService.conversation).toEqual([]);
   });
 
-  test("should return first message", () => {
+  test("should return first message", async () => {
     const gameService = new GameService(data);
-    const firstMessage = gameService.firstMessage();
+    const firstMessage = await gameService.firstMessage();
+
     expect(firstMessage).toEqual({
       questions: ["What's your favorite color?"],
       answers: ["Purple", "Yellow", "Pink"],
@@ -22,16 +23,17 @@ describe("GameService", () => {
     });
   });
 
-  test("should return error when message doesn't exist", () => {
+  test("should return error when message doesn't exist", async () => {
     const gameService = new GameService([]);
-    expect(() => gameService.getMessage("Start")).toThrow(
-      "Data Item doesn't exist"
+
+    await expect(gameService.getMessage("Start")).rejects.toEqual(
+      new Error("Data Item doesn't exist")
     );
   });
 
-  test("One given answer should return message", () => {
+  test("One given answer should return message", async () => {
     const gameService = new GameService(data);
-    const message = gameService.getMessage("Purple");
+    const message = await gameService.getMessage("Purple");
     expect(message).toEqual({
       questions: ["Cool! Whats your favorite purple object?"],
       answers: ["Car", "lavander", "Eggplant"],
@@ -39,10 +41,10 @@ describe("GameService", () => {
     });
   });
 
-  test("should add message to conversation when answer is selected", () => {
+  test("should add message to conversation when answer is selected", async () => {
     const gameService = new GameService(data);
-    gameService.firstMessage();
-    gameService.getMessage("Purple");
+    await gameService.firstMessage();
+    await gameService.getMessage("Purple");
     expect(gameService.conversation).toEqual([
       {
         questions: ["What's your favorite color?"],

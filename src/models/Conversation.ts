@@ -1,3 +1,10 @@
-import { Message } from "./Message";
+export type Question = string;
+export type Answer = string;
 
-export interface Conversation extends Array<Message> {}
+export interface Message {
+  questions: Question[];
+  answers: Answer[];
+  selectedAnswer: Answer | null;
+}
+
+export type Conversation = Message[];

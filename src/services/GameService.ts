@@ -1,17 +1,17 @@
-import { Answer, Message, Question } from "models/Message.ts";
+import { Conversation, Message, Answer, Question } from "models/Conversation.ts";
 import { Data, DataItem } from "../data/Data.ts";
-import { Conversation } from "models/Conversation.ts";
+
 
 export class GameService {
   public conversation: Conversation = [];
 
   constructor(private data: Data) {}
 
-  firstMessage(): Message {
+  async firstMessage(): Promise<Message> {
     return this.getMessage("Start");
   }
 
-  getMessage(answer: Answer): Message {
+  async getMessage(answer: Answer): Promise<Message> {
     const dataItem = this.data.find((dataItem) => dataItem.name === answer);
 
     if (!dataItem || !dataItem.source) {
