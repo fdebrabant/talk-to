@@ -1,9 +1,9 @@
-import Message from "./Message.tsx";
+import Message from "../components/Message.tsx";
 import { useEffect, useState } from "react";
-import messagesData from "../../data/data.json";
-import { DataItem } from "../../data/Data.ts";
+import messagesData from "../data/data.json";
+import { DataItem } from "../data/Data.ts";
 
-export default function Conversation() {
+export default function ConversationPage() {
   // const [messages, setMessages] = useState([]);
   const [initialMessage, setInitialMessage] = useState<DataItem | undefined>(
     undefined

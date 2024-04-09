@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Test from "../components/Test.tsx";
 import { useState } from "react";
 
-export default function Home() {
+export default function HomePage() {
   const [count, setCount] = useState(0);
   return (
     <>

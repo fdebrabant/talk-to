@@ -2,24 +2,24 @@ import "./App.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // components
-import Home from "pages/Home.tsx";
-import Error from "pages/Error.tsx";
-import Conversation from "./pages/Conversation/Conversation.tsx";
 import Root from "layout/Root.tsx";
+import ConversationPage from "./pages/ConversationPage.tsx";
+import ErrorPage from "pages/ErrorPage.tsx";
+import HomePage from "pages/HomePage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <Error />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: "/conversation",
-        element: <Conversation />,
+        element: <ConversationPage />,
       },
     ],
   },
