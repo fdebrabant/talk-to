@@ -1,16 +1,9 @@
+import { Answer, Message, Question } from "models/Message.ts";
 import { Data, DataItem } from "../data/Data.ts";
-
-type Question = string;
-type Answer = string;
-
-interface Message {
-  questions: Question[];
-  answers: Answer[];
-  selectedAnswer: Answer | null;
-}
+import { Conversation } from "models/Conversation.ts";
 
 export class GameService {
-  public conversation: Message[] = [];
+  public conversation: Conversation = [];
 
   constructor(private data: Data) {}
 
