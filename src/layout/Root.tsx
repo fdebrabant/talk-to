@@ -5,9 +5,9 @@ import Header from "./Header";
 export default function Root() {
   return (
     <div className="app-content container">
-      <Header></Header>
+      <Header/>
       <main role="main">
-        <Outlet></Outlet>
+        <Outlet/>
       </main>
       <Footer />
     </div>
