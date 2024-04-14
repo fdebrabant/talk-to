@@ -1,4 +1,4 @@
-import { GameService } from "./GameService.ts";
+import GameService  from "./GameService.ts";
 import data from "../data/data.json";
 
 describe("GameService", () => {

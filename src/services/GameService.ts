@@ -2,12 +2,15 @@ import { Conversation, Message, Answer, Question } from "models/Conversation.ts"
 import { Data, DataItem } from "../data/Data.ts";
 
 
-export class GameService {
+export default class GameService {
   public conversation: Conversation = [];
 
   constructor(private data: Data) {}
 
-  async firstMessage(): Promise<Message> {
+  async firstMessage(): Promise<Message | null> {
+    if (this.conversation.length > 0) {
+      return null;
+    }
     return this.getMessage("Start");
   }
 

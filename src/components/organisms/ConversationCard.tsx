@@ -5,9 +5,7 @@ interface ConversationProps {
   conversation: Conversation;
 }
 
-export default function ConversationCard({
-  conversation,
-}: ConversationProps) {
+export default function ConversationCard({ conversation }: ConversationProps) {
   return (
     <>
       {conversation.map((message, i) => (
